@@ -1,7 +1,7 @@
-Это простой скрипт, чтобы конвертировать оценки с Кинопоиска в csv-шкy, которую можно засунуть в Letterboxd. 
+Script to get your Kinopoisk ratings in a Letterboxd-compatible format
 
-1. Зайти на страничку со своими оценками на кинопоиске (https://www.kinopoisk.ru/user/{user_id}/votes/). Открыть дев-консоль, в ней зайти во вкладку network и найти в ней json с названием last_vote_{user_id}__all.json. В нем лежит вся история оценок, прикинь! 
-2. Сохранить ее содержимое, убрав jsonplast_vote_{user_id}__all( из начала и закрывающую скобку в конце, в файлик ratings.json в директории со скриптом
-3. Запустить скрипт командой python3 kp_to_lb_converter.py
-4. Получившуюся csv-шку загрузить сюда https://letterboxd.com/import/ 
-Там че-то придется поправить руками, но у Леттербоксда очень симпатично устроена миграция, поэтому это должно быть не сложно
+Steps:
+1. Install requirements: `virtualenv .venv && source .venv/bin/activate && pip3 install -r requirements.txt`
+2. Find your user_id on the Kinopoisk: it can be found on the url of your personal page `https://www.kinopoisk.ru/user/{user_id}/`
+3. Launch the script with your user_id as an argumant `python3 kp_to_lb_converter.py 12345678`
+4. Your csv is ready! Hopefully. Now you can upload it to https://letterboxd.com/import/ 
